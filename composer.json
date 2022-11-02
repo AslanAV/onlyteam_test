@@ -1,0 +1,22 @@
+{
+    "name": "aslan/only",
+    "description": "Test task for the position of an intern in https://onlydigital.ru/",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        },
+        "files": [
+            "src/Application/Renderer.php",
+            "src/Application/Template.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "AslanAV",
+            "email": "autlevaslan@yandex.ru"
+        }
+    ],
+    "require": {}
+}
