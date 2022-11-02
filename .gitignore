@@ -1,3 +1,5 @@
 /vendor
 /.idea
 /node_modules
+!/Docker/nginx/logs/access.log
+!/Docker/nginx/logs/error.log
