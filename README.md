@@ -16,5 +16,35 @@
 
 
 Нам важно знать именно ваши навыки обращения с кодом, по этому переписанные готовые решения не принимаются. Всё должно быть выполнено с использованием нативного php, без использования сторонних фреймворков.
-
+***
 demo https://only-digital-test.herokuapp.com/
+
+***
+
+## Setup project local
+
+```shell
+make setup
+```
+
+### start server local
+```shell
+make start
+```
+
+***
+
+## Setup project docker
+```shell
+make compose-build
+```
+
+### start server docker
+```shell
+make dcu
+```
+
+### stop server docker
+```shell
+make dcd
+```
