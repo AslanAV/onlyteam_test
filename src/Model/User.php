@@ -2,14 +2,13 @@
 
 namespace App\Model;
 
+use App\Databases\DB;
+use App\Databases\InterfaceDB;
+
 class User
 {
-    private \PDO $pdo;
-
-    public function __construct()
+    public function createGetId($dataUser)
     {
-        $this->pdo = new \PDO();
+        $id = DB::insertGetId($dataUser);
     }
-
-    public function getName()
 }

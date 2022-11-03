@@ -3,6 +3,9 @@
 namespace App\Public\Index;
 
 use App\Application\Application;
+use App\Controllers\LoginController;
+use App\Controllers\MainPageController;
+use http\Env\Request;
 use function App\Application\Renderer\render;
 
 $autoloadPath1 = __DIR__ . '/../../autoload.php';
@@ -17,11 +20,15 @@ if (file_exists($autoloadPath1)) {
 $app = new Application();
 
 $app->get('/', function () {
-    return render('index', ['test' => 'test']);
+    return MainPageController::index();
+});
+
+$app->get('/login', function () {
+    return LoginController::index();
 });
 
 $app->post('/login', function () {
-    return render('show', ['test' => 'test']);
+    return LoginController::auth($_REQUEST);
 });
 
 $app->run();
