@@ -19,7 +19,6 @@
         }
     ],
     "require": {
-      "ext-pdo": "*",
-      "ext-http": "*"
+      "ext-pdo": "*"
     }
 }
