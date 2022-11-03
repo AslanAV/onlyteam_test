@@ -1,1 +1,1 @@
-web: Docker/nginx nginx.conf src/public
+web: Docker/nginx/nginx.conf src/public
