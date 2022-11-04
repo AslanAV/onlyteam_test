@@ -4,7 +4,8 @@ namespace App\Public\Index;
 
 use App\Application\Application;
 use App\Controllers\LoginController;
-use App\Controllers\MainPageController;
+use App\Controllers\PagesController;
+use App\Controllers\RegistrationController;
 use http\Env\Request;
 use function App\Application\Renderer\render;
 
@@ -20,7 +21,11 @@ if (file_exists($autoloadPath1)) {
 $app = new Application();
 
 $app->get('/', function () {
-    return MainPageController::index();
+    return PagesController::index();
+});
+
+$app->get('/show', function () {
+    return PagesController::show();
 });
 
 $app->get('/login', function () {
@@ -29,6 +34,18 @@ $app->get('/login', function () {
 
 $app->post('/login', function () {
     return LoginController::auth($_REQUEST);
+});
+
+$app->get('/logout', function () {
+    return LoginController::destroy();
+});
+
+$app->get('/registration', function () {
+    return RegistrationController::index();
+});
+
+$app->post('/registration', function () {
+    return RegistrationController::registration($_POST);
 });
 
 $app->run();

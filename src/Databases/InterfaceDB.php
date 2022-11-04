@@ -4,7 +4,7 @@ namespace App\Databases;
 
 interface InterfaceDB
 {
-    public function query($sql);
-    public function insertGetId($dataUser);
-    public function create($table);
+    public function insertGetModel($dataUser);
+    public function find($login, $password, $table);
+    public function search($key, $value);
 }

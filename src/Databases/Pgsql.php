@@ -2,7 +2,7 @@
 
 namespace App\Databases;
 
-class Pgsql implements InterfaceDB
+class Pgsql implements InterfaceAuthDB, InterfaceDB
 {
     private \PDO $pdo;
 
@@ -11,26 +11,33 @@ class Pgsql implements InterfaceDB
         $this->pdo = new \PDO($dbUrl);
     }
 
-    public function query($sql)
+    public function insertGetModel($dataUser)
     {
-        return $this->pdo->query($sql);
+        // TODO: Implement insertGetModel() method.
     }
 
-    public function insertGetId($dataUser)
+    public function find($login, $password, $table)
     {
-        [$name, $number, $email, $password] = $dataUser;
-        $stmt = $this->pdo->prepare("INSERT INTO 'users' (ID, NAME, NUMBER, EMAIL, PASSWORD) VALUES ($name, $number, $email, $password)");
-        $stmt->execute();
-        return $this->pdo->lastInsertId();
-
+        // TODO: Implement find() method.
     }
 
-    public function create($table)
+    public function search($key, $value)
     {
-        $sql = "CREATE DATABASE only";
-        $this->pdo->exec($sql);
+        // TODO: Implement search() method.
+    }
 
-        $tableSql = "CREATE TABLE Users (id INTEGER AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), number VARCHAR(255) UNIQUE, email EMAIL UNIQUE, PASSWORD VARCHAR(255), created_at TIMESTAMP)";
-        $this->pdo->exec($tableSql);
+    public function checkAuth($hash)
+    {
+        // TODO: Implement checkAuth() method.
+    }
+
+    public function addAuth($name, $hash)
+    {
+        // TODO: Implement addAuth() method.
+    }
+
+    public function findUserfromHash($hash)
+    {
+        // TODO: Implement findUserfromHash() method.
     }
 }

@@ -3,12 +3,13 @@
 namespace App\Model;
 
 use App\Databases\DB;
-use App\Databases\InterfaceDB;
+use App\Databases\InterfaceAuthDB;
 
 class User
 {
-    public function createGetId($dataUser)
+    public function insertGetModel($dataUser)
     {
-        $id = DB::insertGetId($dataUser);
+        $db = new DB();
+        return $db->insertGetModel($dataUser);
     }
 }

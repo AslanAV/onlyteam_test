@@ -1,7 +1,21 @@
 <?php include 'layouts/header.phtml' ?>
-<main>
-    <?= $test ?>
 
-    content
+<main>
+    <table style="margin: 15px;">
+        <tr>
+            <th>login</th>
+            <th>tel</th>
+            <th>email</th>
+            <th>registration date</th>
+        </tr>
+        <tr>
+        <?php foreach ($user as $value) :?>
+                <td>
+                    <?= $value ?>
+                </td>
+        <?php endforeach; ?>
+        </tr>
+    </table>
+
 </main>
 <?php include 'layouts/footer.phtml' ?>
