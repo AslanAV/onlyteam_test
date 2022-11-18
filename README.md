@@ -21,6 +21,12 @@ demo https://only-digital-test.herokuapp.com/
 
 ***
 
+## Clone project
+
+```shell
+git clone https://github.com/AslanAV/onlyteam_test.git
+```
+
 ## Setup project local
 
 ```shell
@@ -30,21 +36,4 @@ make setup
 ### start server local
 ```shell
 make start
-```
-
-***
-
-## Setup project docker
-```shell
-make compose-build
-```
-
-### start server docker
-```shell
-make dcu
-```
-
-### stop server docker
-```shell
-make dcd
 ```
