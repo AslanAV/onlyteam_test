@@ -10,11 +10,3 @@ deploy:
 setup:
 	composer install
 
-dcu:
-	docker-compose up -d
-
-compose-build:
-	docker-compose build
-
-dcd:
-	docker-compose down
